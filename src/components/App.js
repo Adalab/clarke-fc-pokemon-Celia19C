@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Pokemon from './Pokemon';
+import { Link, Route, Switch } from 'react-router-dom';
+import Details from './Details';
+
 
 
 class App extends Component {
@@ -75,7 +78,9 @@ class App extends Component {
 
 				<input className="input" onChange={this.handleFilter} placeholder="Escribe el nombre de un Pokemon"></input></div>
 				{this.showPokemons()}
-
+        <Switch>
+          <Route path='/details' component={ Details } />
+        </Switch>
 			</div>
 		);
 	}
