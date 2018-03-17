@@ -78,12 +78,19 @@ class App extends Component {
 
 				<input className="input" onChange={this.handleFilter} placeholder="Escribe el nombre de un Pokemon"></input></div>
 				{this.showPokemons()}
-        <Switch>
-          <Route path='/details' component={ Details } />
-        </Switch>
+				<main className="main">
+          <Switch>
+
+            <Route path='/details' render={() =>
+              <Details pokemonList={this.state.pokemonList} />
+            }/>
+          </Switch>
+
+        </main>
 			</div>
 		);
 	}
 }
 
 export default App;
+// <Route path='/details' component={ Details } />
